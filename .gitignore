@@ -1,1 +1,6 @@
+.gitignore
 .idea 
+.venv
+
+/binarytree/__pycache__
+/lists/__pycache__
