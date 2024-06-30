@@ -94,3 +94,41 @@ def get_depth(root):
 def is_mirrored(node1, node2):
     return (same_tree(node1.left, node2.right) and
             same_tree(node1.right, node2.left))
+
+
+def lowest_common_ancestor(root, val1, val2):
+    if not root:
+        return None
+
+    if root.val == val1 or root.val == val2:
+        return root
+
+    left = lowest_common_ancestor(root.left, val1, val2)
+    right = lowest_common_ancestor(root.right, val1, val2)
+
+    if left and right:
+        return root
+    else:
+        if left and find_node(root.left, [val1, val2]):
+            return left
+
+        if right and find_node(root.right, [val1, val2]):
+            return right
+
+        return None
+
+
+def find_node(node, values):
+    if not node:
+        return
+
+    if node.val in values:
+        return True
+
+    if find_node(node.left, values):
+        return True
+
+    if find_node(node.right, values):
+        return True
+
+    return False
