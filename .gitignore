@@ -3,4 +3,4 @@
 .venv
 
 /binarytree/__pycache__
-/lists/__pycache__
+/linkedlists/__pycache__

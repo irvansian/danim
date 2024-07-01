@@ -101,5 +101,3 @@ def combine(n, k):
             curComb.pop()
 
     backtrack([], 1)
-
-    return results
