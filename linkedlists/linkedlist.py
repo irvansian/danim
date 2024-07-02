@@ -4,6 +4,16 @@ class Node:
         self.next = next
 
 
+def createLinkedList(values):
+    dummy = Node()
+    cur = dummy
+
+    for value in values:
+        cur.next = Node(val=value)
+        cur = cur.next
+
+    return dummy.next
+
 def insertValue(head, val, k):
     prev = None
     cur = head
