@@ -15,6 +15,17 @@ def createLinkedList(values):
     return dummy.next
 
 
+def findValue(head, val):
+    cur = head
+
+    while cur:
+        if cur.val == val:
+            return True
+        cur = cur.next
+
+    return False
+
+
 def insertValue(head, val, k):
     prev = None
     cur = head
