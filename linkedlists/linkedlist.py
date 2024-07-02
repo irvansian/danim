@@ -39,3 +39,28 @@ def deleteNode(head, val):
 def deleteGivenNode(node):
     node.val = node.next.val
     node.next = node.next.next
+
+
+def findMiddle(head):
+    slow = head
+    fast = head
+
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+
+    return slow
+
+
+def findCycle(head):
+    slow = head
+    fast = head
+
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+
+        if fast == slow:
+            return True
+
+    return False
