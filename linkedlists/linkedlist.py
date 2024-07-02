@@ -64,3 +64,25 @@ def findCycle(head):
             return True
 
     return False
+
+
+def findIntersections(head1, head2):
+    cur1 = head1
+    cur2 = head2
+    seen = set()
+
+    while cur1:
+        if cur1 in seen:
+            return cur1
+
+        seen.add(cur1)
+        cur1 = cur1.next
+
+    while cur2:
+        if cur2 in seen:
+            return cur2
+
+        seen.add(cur2)
+        cur2 = cur2.next
+
+    return None
