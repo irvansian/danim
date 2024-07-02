@@ -14,6 +14,7 @@ def createLinkedList(values):
 
     return dummy.next
 
+
 def insertValue(head, val, k):
     prev = None
     cur = head
@@ -96,3 +97,17 @@ def findIntersections(head1, head2):
         cur2 = cur2.next
 
     return None
+
+
+def reverseLinkedList(head):
+    prev = None
+    cur = head
+
+    while cur:
+        nxt = cur.next
+        cur.next = prev
+
+        prev = cur
+        cur = nxt
+
+    return prev
