@@ -111,3 +111,13 @@ def reverseLinkedList(head):
         cur = nxt
 
     return prev
+
+
+def reverseLinkedListRec(head):
+    if not head or not head.next:
+        return head, head
+
+    rHead, rTail = reverseLinkedListRec(head.next)
+    rTail.next = head
+    head.next = None
+    return rHead
