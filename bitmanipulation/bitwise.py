@@ -34,3 +34,13 @@ def toggleTwoValue(num):
     a = 10
     b = 20
     return a ^ b ^ num
+
+
+def count_set_bits(num):
+    setCount = 0
+
+    while num:  # this unsets the right most 1 in the binary representation
+        num &= (num - 1)
+        setCount += 1
+
+    return setCount
