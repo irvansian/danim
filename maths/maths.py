@@ -13,7 +13,7 @@ def gcd(a, b):
 
 def lcm(a, b):
     """
-    lcm = (a * b)/gcd(a,b)
+    a * b = gcd(a,b) * lcm(a,b)
     """
 
     return (a * b) / gcd(a, b)

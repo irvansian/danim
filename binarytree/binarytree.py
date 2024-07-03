@@ -1,3 +1,6 @@
+from collections import deque
+
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -42,6 +45,19 @@ def traverse_postorder(node):
     traverse_postorder(node.left)
     traverse_postorder(node.right)
     print(node.val)
+
+
+def traverse_levelorder(root):
+    values = []
+    queue = deque([root])
+
+    while queue:
+        for _ in range(len(queue)):
+            node = queue.popleft()
+            values.append(node.val)
+
+            queue.append(node.left)
+            queue.append(node.right)
 
 
 def is_balanced(root):
